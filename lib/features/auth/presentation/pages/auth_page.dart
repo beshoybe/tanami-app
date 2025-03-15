@@ -21,6 +21,8 @@ class AuthPage extends StatelessWidget {
     Widget authNavOption({required String text, required String path}) {
       return AppButton(
         onPressed: () {
+          final String location = GoRouterState.of(context).uri.path;
+          if (location.contains(path)) return;
           GoRouter.of(context).pushReplacement(path);
         },
         color:

@@ -14,16 +14,15 @@ import 'package:tanami_capital/gen/assets/assets.gen.dart';
 import 'package:tanami_capital/shared/widgets/app_button.dart';
 import 'package:tanami_capital/shared/widgets/app_dialog.dart';
 
-final pinPutTextEditingControllerProvider = Provider<TextEditingController>((
-  ref,
-) {
-  final controller = TextEditingController();
-  ref.onDispose(() {
-    controller.dispose();
-  });
+final pinPutTextEditingControllerProvider =
+    Provider.autoDispose<TextEditingController>((ref) {
+      final controller = TextEditingController();
+      ref.onDispose(() {
+        controller.dispose();
+      });
 
-  return controller;
-});
+      return controller;
+    });
 
 class PinSheet extends ConsumerWidget {
   final bool setNewPin;

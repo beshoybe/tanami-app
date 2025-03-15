@@ -26,11 +26,17 @@ class HomeHeader extends StatelessWidget {
             ),
           ),
           SizedBox(width: context.w(4)),
-          Text(
-            context.tr.welcome(user.name),
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          Expanded(
+            child: Text(
+              context.tr.welcome(user.name),
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
           ),
-          Spacer(),
+          SizedBox(width: context.w(4)),
           AppButton(
             onPressed: () {},
             hoverColor: context.appTheme.lightHover,
